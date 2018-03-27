@@ -1,11 +1,13 @@
 <form class="example-form" [formGroup]="organization">
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="demo-full-width">
     <input matInput placeholder="Organization" aria-label="Organization" 
-                [matAutocomplete]="auto" formControlName='selectedorg'>
+                [matAutocomplete]="auto" formControlName='orgname' required>
+    <mat-error>please select valid organization from list</mat-error>
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let o of filteredOrganizations" [value]="o">
         <span>{{ o.name }}</span> |
       </mat-option>
     </mat-autocomplete>
+    <mat-hint>please search your organization</mat-hint>
   </mat-form-field>
 </form>

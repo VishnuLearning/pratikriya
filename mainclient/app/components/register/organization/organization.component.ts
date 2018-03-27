@@ -9,30 +9,22 @@ import { FormBuilder, FormGroup, Validators ,FormsModule,NgForm } from '@angular
 export class OrganizationComponent implements OnInit {
   @Input() containerform:FormGroup;
   organizationreg:FormGroup;
-  orgname:string='';
-  address:string='';
-  contactemail:string='';
-  contactphone:string='';
-  city:string='';
-  state:string='';
-  country:string='';
-  zip:string='';
 
   constructor(private fb: FormBuilder) { 
     this.organizationreg = fb.group({  
-      'orgname' : ['', Validators.required],  
+      orgname : [null, Validators.required],  
       'address' : [null, Validators.required],  
       'city' : [null, Validators.required],  
       'state' : [null, Validators.required],  
       'country':[null, Validators.required],  
       'zip':[null, Validators.required],  
       'contactemail':[null, Validators.compose([Validators.required,Validators.email])],  
-      'contactphone':[null, Validators.required]  
+      'contactphone':[null, Validators.compose([Validators.required, Validators.pattern(/^([\+]\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/)])]  
     });  
   }
 
   ngOnInit() {
-    this.containerform.addControl('org', this.organizationreg);
+    this.containerform.setControl('org', this.organizationreg);
   }
 
 }

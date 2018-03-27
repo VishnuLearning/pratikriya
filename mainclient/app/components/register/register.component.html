@@ -25,24 +25,27 @@
                 <input formControlName="cnfpassword" matInput placeholder="Confirm Password" type="password">
                 <mat-error *ngIf="!regiForm.get('cnfpassword').valid && regiForm.get('cnfpassword').touched">Please enter First Name !!!</mat-error>
             </mat-form-field>
-            <mat-form-field>  
-                    <mat-select formControlName="role" placeholder="Select Role" (change)="onRoleChange()">  
-                        <mat-option *ngFor="let r of roles" value="{{r.id}}">{{r.name}}</mat-option> 
-                    </mat-select>  
-                    <mat-error>  
-                        <span *ngIf="!regiForm.get('role').valid && regiForm.get('role').touched">Please select any item !!!</span>  
-                    </mat-error>  
-                </mat-form-field>  
+            <mat-form-field>
+                <mat-select formControlName="role" placeholder="Select Role" (change)="onRoleChange()">
+                    <mat-option *ngFor="let r of roles" value="{{r.id}}">{{r.name}}</mat-option>
+                </mat-select>
+                <mat-error>
+                    <span *ngIf="!regiForm.get('role').valid && regiForm.get('role').touched">Please select any item !!!</span>
+                </mat-error>
+            </mat-form-field>
             <!-- field that will come from db about role. if role is admin, have to enter organization details. Else need to pick existing organization -->
             <!-- need to therefor have multiple form groups and services for autocomplete
             <button mat-raised-button color="accent" [disabled]="!regiForm.valid">Submit</button>-->
             <organization-form *ngIf='roleid==1' [containerform]='regiForm'></organization-form>
             <orgselector-form *ngIf='roleid>1' [containerform]='regiForm'></orgselector-form>
+            <mat-error>
+                <span *ngIf="orgerror">Please Provide value(s) !!!</span>
+            </mat-error>
             <mat-form-field class="demo-full-width">
-                    <input formControlName="designation" matInput placeholder="Designation">
-                    <mat-hint>e.g. Manager, Principal, HOD ...</mat-hint>
-                    <mat-error *ngIf="!regiForm.get('designation').valid && regiForm.get('designation').touched">Enter Your Designation</mat-error>
-                </mat-form-field>
+                <input formControlName="designation" matInput placeholder="Designation">
+                <mat-hint>e.g. Manager, Principal, HOD ...</mat-hint>
+                <mat-error *ngIf="!regiForm.get('designation').valid && regiForm.get('designation').touched">Enter Your Designation</mat-error>
+            </mat-form-field>
             <button mat-raised-button color="accent">Submit</button>
         </form>
     </mat-card-content>

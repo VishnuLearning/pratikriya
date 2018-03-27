@@ -2,7 +2,7 @@
 
 <form [formGroup]="organizationreg">
   <mat-form-field class="demo-full-width">
-    <input formControlName="orgname" matInput placeholder="Organization Name">
+    <input #orgname formControlName="orgname" matInput placeholder="Organization Name" required>
     <mat-error *ngIf="!organizationreg.get('orgname').valid && organizationreg.get('orgname').touched">Please enter proper address !!!</mat-error>
   </mat-form-field>
 

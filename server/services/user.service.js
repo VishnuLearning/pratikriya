@@ -7,11 +7,9 @@ const mysqlcon = require("../config/mysqlcon")
 var service = {};
 
 service.authenticate = authenticate;
-service.getAll = getAll;
 service.getById = getById;
 service.create = create;
 service.update = update;
-service.delete = _delete;
 
 module.exports = service;
 

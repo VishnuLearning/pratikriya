@@ -40,6 +40,7 @@ import { AboutComponent } from './components/about/about.component';
 import { FormCreatorComponent } from './components/form-creator/form-creator.component';
 import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { StageComponent } from './components/workflow/stage/stage.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
     AboutComponent,
     FormCreatorComponent,
     WorkflowComponent,
-    AnalyticsComponent
+    AnalyticsComponent,
+    StageComponent
   ],
   entryComponents: [AlertDialog],
   imports: [

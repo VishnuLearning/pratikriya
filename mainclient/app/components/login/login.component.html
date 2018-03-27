@@ -7,16 +7,16 @@
 
     <!-- Actual content starts from here -->
     <mat-card-content>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="login()">
             <mat-form-field class="demo-full-width">
-                <input matInput placeholder="Enter your email" [formControl]="emailControl" [value]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                <input #email matInput placeholder="Enter your email" required formControlName="email">
+                <mat-error>Enter proper organization email</mat-error>
             </mat-form-field>
             <mat-form-field class="demo-full-width">
-                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [value]="password" required>
+                <input #password matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required formControlName="password">
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
             </mat-form-field>
-            <button mat-raised-button color="primary" (click)="login()">Drive</button>
+            <button type="submit" mat-raised-button color="primary" [disabled]='!form.valid'>Drive</button>
 
         </form>
     </mat-card-content>

@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AbstractControl } from '@angular/forms/src/model';
 
 export class Org {
   constructor(public id: number, public name: string) { }
+}
+
+export function ValidateOrg(control: AbstractControl) {
+  if(control.value && control.value.id) return null;
+  return { validOrg: true };
 }
 
 @Injectable()

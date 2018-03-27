@@ -1,9 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatchorganizationService, Org} from '../../../services/matchorganization.service';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { MatchorganizationService, Org, ValidateOrg} from '../../../services/matchorganization.service';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators/map';
 import { startWith } from 'rxjs/operators/startWith';
 import { FormControl, FormGroup, FormBuilder, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'orgselector-form',
@@ -20,15 +22,15 @@ export class OrgselectorComponent implements OnInit {
   constructor(private _getorg: MatchorganizationService, private fb: FormBuilder) {
     this.filteredOrganizations = [];
     this.organization = fb.group({
-      'selectedorg': [new Org(0,''), Validators.required]
+      orgname: [null, [Validators.required, ValidateOrg]]
     });
   }
 
   ngOnInit() {
     //this._getorg.getMatchingOrganizations(this.organizationCtrl.value).subscribe(res => this.filteredOrganizations = res);
-    this.containerform.addControl('org', this.organization);
-
-    this.organization.get('selectedorg').valueChanges.subscribe(val => {
+    this.containerform.setControl('org', this.organization);
+    
+    this.organization.get('orgname').valueChanges.subscribe(val => {
       if(val && val.length>3) {
         this._getorg.getMatchingOrganizations(val).subscribe(res => this.filteredOrganizations = res);
       }
@@ -37,7 +39,7 @@ export class OrgselectorComponent implements OnInit {
 
   displayFn(org?: Org): string | undefined {
     //console.log(org);
-    return org ? org.name : undefined;
+    return org ? org.name : null;
   }
 
 

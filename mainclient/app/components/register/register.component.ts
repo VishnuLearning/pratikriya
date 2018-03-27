@@ -4,7 +4,6 @@ import { FormControl, FormGroup, FormBuilder, FormGroupDirective, NgForm, Valida
 
 import { AlertService } from '../../services/alert.service';
 import { UserService } from '../../services/user.service';
-import { OrganizationComponent } from './organization/organization.component';
 
 import { RolesService } from '../../services/roles.service';
 
@@ -15,20 +14,20 @@ import { RolesService } from '../../services/roles.service';
 })
 
 export class RegisterComponent {
-    @ViewChild('org') org: OrganizationComponent;
     regiForm: FormGroup;
     name: string = '';
     email: string = '';
     password: string = '';
     cnfpassword: string = '';
-    designation:string='';
+    designation: string = '';
     role: string = '';
-    roles:any = [];
-    roleid:number;
+    roles: any = [];
+    roleid: number = 3;
+    orgerror: boolean = false;
 
     constructor(
         private fb: FormBuilder,
-        private _roles:RolesService,
+        private _roles: RolesService,
         private router: Router,
         private userService: UserService,
         private alertService: AlertService
@@ -38,30 +37,38 @@ export class RegisterComponent {
     }
 
     ngOnInit() {
-        this._roles.getRoles().subscribe(res=>this.roles = res);
+        this._roles.getRoles().subscribe(res => this.roles = res);
         this.regiForm = this.fb.group({
             'name': [null, Validators.required],
             'email': [null, Validators.required],
             'password': [null, Validators.required],
             'cnfpassword': [null, Validators.required],
             'role': [null, Validators.required],
-            'designation':[null, Validators.required]
+            'designation': [null, Validators.required],
+            'org': [null, Validators.required]
         });
     }
 
     onFormSubmit(form: NgForm) {
         console.log(form);
+        for (let ctrl in (this.regiForm.get("org") as FormGroup).controls) {
+            if (!this.regiForm.get("org").get(ctrl).value) {
+                this.regiForm.get("org").get(ctrl).markAsDirty();
+                this.regiForm.get("org").get(ctrl).markAsTouched();
+            }
+        }
+
+
+        if (!this.regiForm.get("org") || !this.regiForm.get("org").value
+            || !this.regiForm.get("org").value.selectedorg || !this.regiForm.get("org").value.selectedorg.id) {
+            console.log("invalid org");
+        }
+
         //register(form);
     }
 
     onRoleChange() {
-        if(this.roleid==1 && this.regiForm.get('role').value!=1) {
-            this.regiForm.removeControl('org');
-        } else if (this.roleid>1 && this.regiForm.get('role').value==1) {
-            this.regiForm.removeControl('org');
-        }
         this.roleid = this.regiForm.get('role').value;
-        
     }
 
     /*register(form: NgForm) {
