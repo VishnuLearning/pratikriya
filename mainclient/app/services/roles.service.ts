@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class RolesService {
 
-  rolesUrl:string = 'assets/roles.json';
+  rolesUrl:string = 'http://localhost:4000/roles/getroles';
 
   constructor(private http: HttpClient) { }
 

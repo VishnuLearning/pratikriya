@@ -14,14 +14,14 @@ export function ValidateOrg(control: AbstractControl) {
 @Injectable()
 export class MatchorganizationService {
 
-  getOrgUrl: string = 'assets/organizations.json';
+  getOrgUrl: string = 'http://localhost:4000/organizations/getorganizations';
 
   constructor(private http: HttpClient) { }
 
   getMatchingOrganizations(searchtext: string) {
     //update url with searchtext param and filet in node or database
     //can implement local storage in the service later as well
-    return this.http.get(this.getOrgUrl);
+    return this.http.post(this.getOrgUrl,{"substring":searchtext});
   }
 
 }
