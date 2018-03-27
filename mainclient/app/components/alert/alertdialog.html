@@ -1,0 +1,9 @@
+<div *ngIf="data">
+    <h1 mat-dialog-title>ALERT</h1>
+    <div mat-dialog-content>
+        <p [ngClass]="{ 'alert': data, 'alert-success': data.type === 'success', 'alert-danger': data.type === 'error' }">{{data.text}}</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+    </div>
+</div>

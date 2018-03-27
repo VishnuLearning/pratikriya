@@ -1,0 +1,28 @@
+<div #demo>
+    <mat-grid-list cols="4" rowHeight="350px">
+      <mat-grid-tile [colspan]="4" [rowspan]="1" class="tagline">
+        <div>
+          <h2 class='mat-display-1 demo-heading'>
+            The
+            <strong class="highlight">POWER</strong> to
+            <strong class="highlight">DRIVE</strong>
+          </h2>
+          <mat-slide-toggle class="demo-margin" [checked]="checked" [color]="'accent'" (change)="toggleDemo()"></mat-slide-toggle>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="blue">
+        <div>
+          <div class="rel">
+            <img src="assets/images/fbform.svg" alt="" class="form-image">
+            <img #pencil src="assets/images/pencil.svg" alt="" class="img-fluid z-depth=0 pencil-over" [ngStyle]="{'top':penciltop+'px'}">
+            <demo-choice *ngFor="let o of options; let i=index" [type]="o" [index]="i"></demo-choice>
+          </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="2" [rowspan]="1" [style.background]="blue">
+        <div class="rel">
+          <img class="smiley-image" src="assets/images/smiley{{score}}.png">
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>

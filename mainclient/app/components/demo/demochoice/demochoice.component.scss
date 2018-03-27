@@ -1,0 +1,43 @@
+.tick {
+    position:absolute;
+    left:86px;
+    width:50px;
+    -webkit-animation: zoomin 500ms ease-in;
+            animation: zoomin 500ms ease-in;
+}
+
+.cross {
+    position:absolute;
+    left:86px;
+    width:50px;
+    margin-top:6px;
+    -webkit-animation: zoomin 500ms ease-in;
+            animation: zoomin 500ms ease-in;
+}
+
+@-webkit-keyframes zoomin {
+    0% {opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -webkit-transform:scale(0); transform:scale(0);}
+    70% {opacity:1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; -webkit-transform:scale(1.2); transform:scale(1.2);}
+    100% {opacity:1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; -webkit-transform:scale(1); transform:scale(1);}
+}
+
+@keyframes zoomin {
+    0% {opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -webkit-transform:scale(0); transform:scale(0);}
+    70% {opacity:1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; -webkit-transform:scale(1.2); transform:scale(1.2);}
+    100% {opacity:1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; -webkit-transform:scale(1); transform:scale(1);}
+}
+
+.over-0 {
+    top:68px;
+}
+
+.over-1 {
+    top:117px;
+}
+.over-2 {
+    top:173px;
+}
+
+.over-3 {
+    top:229px;
+}

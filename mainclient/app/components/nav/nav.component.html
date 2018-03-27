@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <a mat-button class="large" routerLink=''>PRATIKRIYA</a>
+
+        <span class="example-spacer"></span>
+
+        <a mat-button routerLink="about">About</a>
+        <a mat-button *ngIf="!currentUser" routerLink="login">Login</a>
+        <a mat-button *ngIf="!currentUser" routerLink="register">Register</a>
+        <button mat-button *ngIf="currentUser" (click)="logout()">Logout</button>
+    </mat-toolbar-row>
+</mat-toolbar>

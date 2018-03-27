@@ -1,0 +1,51 @@
+
+<main>
+        <app-demo></app-demo>
+        <mat-grid-list cols="3" rowHeight="350px">
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <mat-card>
+                  <mat-card-header>
+                      <i class="material-icons large center">content_paste</i>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p class="body-1 tagline-text center">
+                      Design forms using pre-built templates
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions class="center">
+                    <a class="bottom-margin" mat-raised-button color="primary" routerLink="get">GET</a>
+                  </mat-card-actions>
+                </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <mat-card>
+                  <mat-card-header>
+                      <i class="material-icons large center">send</i>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p class="body-1 tagline-text center">
+                      Prepare workflows and launch feedbacks
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions class="center">
+                      <a class="bottom-margin" mat-raised-button color="primary" routerLink="set">SET</a>
+                  </mat-card-actions>
+                </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <mat-card>
+                  <mat-card-header>
+                      <i class="material-icons large center">timeline</i>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <p class="body-1 tagline-text center">
+                      Analyze feedback reports and be proactive
+                    </p>
+                  </mat-card-content>
+                  <mat-card-actions class="center">
+                      <a class="bottom-margin" mat-raised-button color="primary" routerLink="go">GO</a>
+                  </mat-card-actions>
+                </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </main>

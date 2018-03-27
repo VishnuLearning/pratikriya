@@ -1,0 +1,49 @@
+.rel {
+    position:relative;
+    width:350px;
+    height:350px;
+    margin:0 auto;
+}
+
+.filled-bg {
+    padding: 1rem;
+    background-color: #33b5e5;
+    color: #fff;
+    text-align: center;
+}
+
+.form-image {
+    width:350px;
+}
+
+.pencil-over {
+    position:absolute;
+    left:110px;
+    width:150px;
+    transition: top 0.5s;
+}
+
+.smiley-image {
+    width:200px;
+    height:200px;
+    margin:75px;
+}
+
+.demo-margin {
+    margin: 10px auto;
+    display:block;
+    width:40px;
+    transform: scale(2);
+}
+
+.demo-heading {
+    color:#ffffff;
+}
+
+.tagline {
+    background-color:#673ab7;
+}
+
+.highlight {
+    color: #ffc107;
+}

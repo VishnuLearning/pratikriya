@@ -1,0 +1,39 @@
+<!-- Card container that binds all togather -->
+
+<form [formGroup]="organizationreg">
+  <mat-form-field class="demo-full-width">
+    <input formControlName="orgname" matInput placeholder="Organization Name">
+    <mat-error *ngIf="!organizationreg.get('orgname').valid && organizationreg.get('orgname').touched">Please enter proper address !!!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="demo-full-width">
+    <input formControlName="address" matInput placeholder="Address">
+    <mat-error *ngIf="!organizationreg.get('address').valid && organizationreg.get('address').touched">Please enter proper address !!!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="demo-full-width">
+    <input formControlName="city" matInput placeholder="City">
+    <mat-error *ngIf="!organizationreg.get('city').valid && organizationreg.get('city').touched">Please enter First Name !!!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="demo-full-width">
+    <input formControlName="state" matInput placeholder="State">
+    <mat-error *ngIf="!organizationreg.get('state').valid && organizationreg.get('state').touched">Please enter First Name !!!</mat-error>
+  </mat-form-field>
+  <mat-form-field class="demo-full-width">
+    <input formControlName="country" matInput placeholder="Country">
+    <mat-error *ngIf="!organizationreg.get('country').valid && organizationreg.get('country').touched">Please enter First Name !!!</mat-error>
+  </mat-form-field>
+  <mat-form-field class="demo-full-width">
+    <input formControlName="zip" matInput placeholder="ZIP / PIN code">
+    <mat-error *ngIf="!organizationreg.get('zip').valid && organizationreg.get('zip').touched">Please enter First Name !!!</mat-error>
+  </mat-form-field>
+  <mat-form-field class="demo-full-width">
+    <input formControlName="contactphone" matInput placeholder="Contact Phone of Organization Head" type="tel">
+    <mat-error *ngIf="!organizationreg.get('contactphone').valid && organizationreg.get('contactphone').touched">Please enter First Name !!!</mat-error>
+  </mat-form-field>
+  <mat-form-field class="demo-full-width">
+    <input formControlName="contactemail" matInput placeholder="Contact Email of Organization Head" type="email">
+    <mat-error *ngIf="!organizationreg.get('contactemail').valid && organizationreg.get('contactemail').touched">Please enter First Name !!!</mat-error>
+  </mat-form-field>
+</form>
