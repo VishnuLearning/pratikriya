@@ -1,14 +1,18 @@
 require('rootpath')();
 const express=require("express");
 const app=express();
-var cors = require('cors');
-var bodyParser = require('body-parser');
-var expressJwt = require('express-jwt');
-var config = require('config.json');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const expressJwt = require('express-jwt');
+const config = require('config.json');
 
 app.use(cors());
+
+// parsers
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+//public folder
 app.use(express.static(__dirname+"/dist"))
 
 // use JWT auth to secure the api, the token can be passed in the authorization header or querystring
@@ -28,7 +32,7 @@ app.use(expressJwt({
 app.use('/users', require('./server/controllers/users.controller'));
 
 // start server
-var port = process.env.NODE_ENV === 'production' ? 80 : 4000;
-var server = app.listen(port, function () {
+const port = process.env.NODE_ENV === 'production' ? 80 : 4000;
+const server = app.listen(port, function () {
     console.log('Server listening on port ' + port);
 });
