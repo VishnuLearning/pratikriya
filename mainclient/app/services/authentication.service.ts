@@ -11,8 +11,9 @@ const httpOptions = {
 export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
-    login(username: string, password: string) {
-        return this.http.post<any>('/users/authenticate', { username: username, password: password }, httpOptions)
+    login(email: string, password: string) {
+        console.log(email, password);
+        return this.http.post<any>('/users/authenticate', { "email": email, "password": password }, httpOptions)
             .map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {

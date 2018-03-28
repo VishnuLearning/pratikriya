@@ -14,6 +14,7 @@ import { RolesService } from '../../services/roles.service';
 })
 
 export class RegisterComponent {
+    loading:boolean;
     regiForm: FormGroup;
     name: string = '';
     email: string = '';
@@ -51,6 +52,7 @@ export class RegisterComponent {
 
     onFormSubmit(form: NgForm) {
         console.log(form);
+        console.log(this.regiForm.get("org").valid);
         for (let ctrl in (this.regiForm.get("org") as FormGroup).controls) {
             if (!this.regiForm.get("org").get(ctrl).value) {
                 this.regiForm.get("org").get(ctrl).markAsDirty();
@@ -58,20 +60,23 @@ export class RegisterComponent {
             }
         }
 
+        console.log(this.regiForm.get("org").valid);
 
-        if (!this.regiForm.get("org") || !this.regiForm.get("org").value
-            || !this.regiForm.get("org").value.selectedorg || !this.regiForm.get("org").value.selectedorg.id) {
+
+        if (!this.regiForm.get("org") || !this.regiForm.get("org").valid) {
             console.log("invalid org");
         }
 
-        //register(form);
+        if(this.regiForm.valid && this.regiForm.get("org").valid) {
+            this.register(form);
+        }
     }
 
     onRoleChange() {
         this.roleid = this.regiForm.get('role').value;
     }
 
-    /*register(form: NgForm) {
+    register(form: NgForm) {
         this.loading = true;
         this.userService.create(form)
             .subscribe(
@@ -83,5 +88,5 @@ export class RegisterComponent {
                     this.alertService.error(error);
                     this.loading = false;
                 });
-    }*/
+    }
 }
