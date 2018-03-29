@@ -18,6 +18,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
 import { RolesService } from './services/roles.service';
 import { MatchorganizationService } from './services/matchorganization.service';
+import {UserStateService} from './services/user-state.service'
 
 //helpers
 import { ErrorInterceptorProvider} from './helpers/error.interceptor';
@@ -41,6 +42,7 @@ import { FormCreatorComponent } from './components/form-creator/form-creator.com
 import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { StageComponent } from './components/workflow/stage/stage.component';
+import { ShankerComponent } from './shanker/shanker.component';
 
 
 @NgModule({
@@ -60,7 +62,8 @@ import { StageComponent } from './components/workflow/stage/stage.component';
     FormCreatorComponent,
     WorkflowComponent,
     AnalyticsComponent,
-    StageComponent
+    StageComponent,
+    ShankerComponent
   ],
   entryComponents: [AlertDialog],
   imports: [
@@ -82,7 +85,8 @@ import { StageComponent } from './components/workflow/stage/stage.component';
     ErrorInterceptorProvider,
     JwtInterceptorProvider,
     {provide: ErrorStateMatcher, 
-    useClass: ShowOnDirtyErrorStateMatcher}
+    useClass: ShowOnDirtyErrorStateMatcher},
+    UserStateService
   ],
   bootstrap: [AppComponent]
 })

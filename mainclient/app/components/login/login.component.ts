@@ -22,7 +22,8 @@ export class LoginComponent {
         private router: Router,
         private authService: AuthenticationService,
         private alertService: AlertService,
-        private formBuilder: FormBuilder) {
+        private formBuilder: FormBuilder
+        ) {
     }
 
     ngOnInit() {

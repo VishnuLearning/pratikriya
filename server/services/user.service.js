@@ -1,11 +1,11 @@
-var _ = require('lodash');
-var jwt = require('jsonwebtoken');
-var bcrypt = require('bcryptjs');
-var Q = require('q');
-var config = require('../../config.json')
+const _ = require('lodash');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const Q = require('q');
+const config = require('../../config.json')
 const mysqlcon = require("../config/mysqlconn")
 
-var service = {};
+const service = {};
 
 service.authenticate = authenticate;
 //service.getAll = getAll;
@@ -17,7 +17,7 @@ service.delete = _delete;
 module.exports = service;
 
 function authenticate(email, password) {
-  var deferred = Q.defer();
+  let deferred = Q.defer();
   console.log(email+", "+password);
   mysqlcon.query('select ID, email, password, name from users where email = ?', [email], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
@@ -44,7 +44,7 @@ function authenticate(email, password) {
 }
 
 function getById(_id) {
-  var deferred = Q.defer();
+  let deferred = Q.defer();
 
   mysqlcon.query('select * from users where ID = ?', [_id], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
@@ -62,7 +62,7 @@ function getById(_id) {
 }
 
 function create(userParam) {
-  var deferred = Q.defer();
+  let deferred = Q.defer();
 
   // validation
   userParam.password = bcrypt.hashSync(userParam.password, 10);
@@ -157,7 +157,7 @@ function create(userParam) {
 
 function update(_id, userParam) {
 
-  var deferred = Q.defer();
+  const deferred = Q.defer();
 
   mysqlcon.query('select * from users where ID = ?', [_id], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
@@ -181,7 +181,7 @@ function update(_id, userParam) {
 }
 
 function _delete(_id) {
-  var deferred = Q.defer();
+  let deferred = Q.defer();
 
   User.findById(_id, function (err, user) {
     if (err) deferred.reject(err.name + ': ' + err.message);
@@ -191,7 +191,7 @@ function _delete(_id) {
 
   function deleteUser(user) {
     // fields to update
-    var u = new User(user);
+    let u = new User(user);
 
     u.remove(function (err) {
       if (err) deferred.reject(err.name + ': ' + err.message);

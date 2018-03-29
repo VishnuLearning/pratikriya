@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user';
-import {UserService} from '../../services/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
+
 
 @Component({
   selector: 'app-nav',
@@ -9,17 +11,18 @@ import {UserService} from '../../services/user.service';
 })
 export class NavComponent implements OnInit {
   currentUser: User;
-
-  constructor(private userService: UserService) { 
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  constructor(private authService: AuthenticationService,
+              private router: Router
+             ) { 
+    //this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
-    
+    this.authService.loggedInUser().subscribe(user=>this.currentUser = user);
   }
-
+  
   logout() {
-    console.log("logging user out");
+    if(this.currentUser) this.authService.logout();
+    this.router.navigate(['']);
   }
-
 }
