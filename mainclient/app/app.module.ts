@@ -42,7 +42,6 @@ import { FormCreatorComponent } from './components/form-creator/form-creator.com
 import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { StageComponent } from './components/workflow/stage/stage.component';
-import { ShankerComponent } from './shanker/shanker.component';
 
 
 @NgModule({
@@ -62,8 +61,7 @@ import { ShankerComponent } from './shanker/shanker.component';
     FormCreatorComponent,
     WorkflowComponent,
     AnalyticsComponent,
-    StageComponent,
-    ShankerComponent
+    StageComponent
   ],
   entryComponents: [AlertDialog],
   imports: [
