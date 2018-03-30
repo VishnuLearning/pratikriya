@@ -1,14 +1,33 @@
-var express = require('express');
-var router = express.Router();
-var formService = require('../services/form.service');
+const express = require('express')
+const router = express.Router()
+const formService = require('../services/form.service')
+const FeedbackForm = require('../models/feedbackForm')
 
-router.get('/forms',displayPreviousForms);
+router.post('/getForms',getFormById)
+router.get('/formList', getFormList)
+router.get('/insertForm', insertForm )
 
-module.exports = router;
 
-function displayPreviousForms(){
-    formService.displayPreviousForms()
-    .then((forms) =>{ res.status(200).send(forms);})
-    .catch((err) =>{res.status(200).send(data);})
+module.exports = router
+
+//completed
+function getFormById(req, res){
+    formService.getForms(req.body.id)
+    .then((form) =>{ res.status(200).send(form)})
+    .catch((err) =>{res.status(200).send([])})
+}
+
+//completed
+function getFormList(req, res){
+    formService.getFormList()
+    .then((formList) =>{ res.status(200).send(formList)})
+    .catch((err) =>{res.status(200).send([])})
+}
+
+//completed
+function insertForm(req, res){
+   formService.saveForm(req.body.form)
+   .then(() =>{ res.status(200)})
+   .catch((err) =>{res.status(400)})
 }
 

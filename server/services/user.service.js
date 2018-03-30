@@ -1,76 +1,76 @@
-const _ = require('lodash');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const Q = require('q');
+const _ = require('lodash')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
+const Q = require('q')
 const config = require('../../config.json')
 const mysqlcon = require("../config/mysqlconn")
 
-const service = {};
+const service = {}
 
-service.authenticate = authenticate;
-//service.getAll = getAll;
-service.getById = getById;
-service.create = create;
-service.update = update;
-service.delete = _delete;
+service.authenticate = authenticate
+//service.getAll = getAll
+service.getById = getById
+service.create = create
+service.update = update
+service.delete = _delete
 
-module.exports = service;
+module.exports = service
 
 function authenticate(email, password) {
-  let deferred = Q.defer();
-  console.log(email+", "+password);
+  let deferred = Q.defer()
+  console.log(email+", "+password)
   mysqlcon.query('select ID, email, password, name from users where email = ?', [email], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
-    //password = bcrypt.hashSync(password, 10);
-    console.log(password);
+    //password = bcrypt.hashSync(password, 10)
+    console.log(password)
     
     if (rows.length) {
-      console.log(rows[0].password);
+      console.log(rows[0].password)
       if(bcrypt.compareSync(password, rows[0].password))
       deferred.resolve({
         _id: rows[0].ID,
         email: email,
         name: rows[0].name,
         token: jwt.sign({ sub: rows[0].ID }, config.secret)
-      });
-      else deferred.resolve();
+      })
+      else deferred.resolve()
     } else {
       // user not found
-      deferred.resolve();
+      deferred.resolve()
     }
   })
 
-  return deferred.promise;
+  return deferred.promise
 }
 
 function getById(_id) {
-  let deferred = Q.defer();
+  let deferred = Q.defer()
 
   mysqlcon.query('select * from users where ID = ?', [_id], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
 
     if (rows.length) {
       // return user (without hashed password)
-      deferred.resolve(_.omit(rows[0], 'password'));
+      deferred.resolve(_.omit(rows[0], 'password'))
     } else {
       // user not found
-      deferred.resolve();
+      deferred.resolve()
     }
   })
 
-  return deferred.promise;
+  return deferred.promise
 }
 
 function create(userParam) {
-  let deferred = Q.defer();
+  let deferred = Q.defer()
 
   // validation
-  userParam.password = bcrypt.hashSync(userParam.password, 10);
+  userParam.password = bcrypt.hashSync(userParam.password, 10)
   mysqlcon.query('select ID from users where email = ?', [userParam.email], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
     if (rows.length) {
       // return user (without hashed password)
-      deferred.reject('Username "' + userParam.email + '" is already taken');
+      deferred.reject('Username "' + userParam.email + '" is already taken')
     } else {
       // user not found
       if (userParam.role == 1) { //validate organization
@@ -79,34 +79,34 @@ function create(userParam) {
 
           if (rows.length > 0) {
             console.log("")
-            deferred.reject('Organization "' + userParam.org.orgname + '" is already registered under different admin');
+            deferred.reject('Organization "' + userParam.org.orgname + '" is already registered under different admin')
           } else {
             // organization not found
-            //console.log(userParam);
-            createAdminUser();
+            //console.log(userParam)
+            createAdminUser()
           }
         })
       } else {
         // user not found
-        createUser();
+        createUser()
       }
     }
   })
 
   function createAdminUser() {
-    //console.log(userParam.org.contactphone);
+    //console.log(userParam.org.contactphone)
     if (userParam.role == 1) {
       //insert the user
       mysqlcon.query('insert into users (name,email,phone,roleid,designation,password) values(?,?,?,?,?,?)', [userParam.name, userParam.email, userParam.org.contactphone, userParam.role, userParam.designation, userParam.password], function (err, rows) {
-        console.log("jarvis debugger", err);
+        console.log("jarvis debugger", err)
 
         if (err) {
           deferred.reject(err.name)
         }
         else {
           mysqlcon.query('select ID from users where email = ?', [userParam.email], function (err, rows) {
-            //if(err) console.log("jarvis 1",err);
-            console.log("hello errors");
+            //if(err) console.log("jarvis 1",err)
+            console.log("hello errors")
             let adminid = rows[0].ID
             mysqlcon.query('insert into organizations (name,address,city,country,zip,adminid) values(?,?,?,?,?,?)', [userParam.name, userParam.org.address, userParam.org.city, userParam.org.country, userParam.org.zip, adminid], function (err, rows) {
               if (err) {
@@ -116,7 +116,7 @@ function create(userParam) {
               else {
 
                 mysqlcon.query('select ID from organizations where adminid = ?', [adminid], function (err, row) {
-                  if (err) deferred.reject("error in update of rows");
+                  if (err) deferred.reject("error in update of rows")
                   else {
                     console.log("admin id = "+adminid)
                     mysqlcon.query('update users set organizationid=? where ID= ?', [row[0].ID, adminid], function (err, result) {
@@ -141,7 +141,7 @@ function create(userParam) {
           // if success
           //do another query to insert user (or vice versa depending upon the foreign key constraint)
           // add hashed password to user object
-          user.password = bcrypt.hashSync(userParam.password, 10);
+          user.password = bcrypt.hashSync(userParam.password, 10)
       })*/
     }
   }
@@ -157,17 +157,17 @@ function create(userParam) {
 
 function update(_id, userParam) {
 
-  const deferred = Q.defer();
+  const deferred = Q.defer()
 
   mysqlcon.query('select * from users where ID = ?', [_id], function (err, rows) {
     if (err) deferred.reject(err.name + ': ' + err.message)
 
     if (rows.length) {
       // return user (without hashed password)
-      updateUser();
+      updateUser()
     } else {
       // user not found
-      deferred.resolve();
+      deferred.resolve()
     }
   })
 
@@ -177,28 +177,28 @@ function update(_id, userParam) {
     // run update query
   }
 
-  return deferred.promise;
+  return deferred.promise
 }
 
 function _delete(_id) {
-  let deferred = Q.defer();
+  let deferred = Q.defer()
 
   User.findById(_id, function (err, user) {
-    if (err) deferred.reject(err.name + ': ' + err.message);
+    if (err) deferred.reject(err.name + ': ' + err.message)
 
-    deleteUser(user);
-  });
+    deleteUser(user)
+  })
 
   function deleteUser(user) {
     // fields to update
-    let u = new User(user);
+    let u = new User(user)
 
     u.remove(function (err) {
-      if (err) deferred.reject(err.name + ': ' + err.message);
+      if (err) deferred.reject(err.name + ': ' + err.message)
 
-      deferred.resolve();
-    });
+      deferred.resolve()
+    })
   }
 
-  return deferred.promise;
+  return deferred.promise
 }

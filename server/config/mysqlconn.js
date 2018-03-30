@@ -1,5 +1,5 @@
 const mysql = require('mysql')
-const config = require('config.json');
+const config = require('config.json')
 
 var con = mysql.createConnection( {
     host:config.mysqlhost,
@@ -7,6 +7,9 @@ var con = mysql.createConnection( {
     user:config.mysqluser,
     password:config.mysqlpassword,
     database:config.mysqldb
+}, (err)=>{
+  if(err) throw err
+  console.log("mysql connected1!")
 })
 
 con.connect(function(err) {
