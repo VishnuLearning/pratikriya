@@ -1,0 +1,240 @@
+ {
+	"id":"0",
+	"sections":[
+        {
+            "id" : "1",
+			"name": "Aptitude",
+            "questions": [
+                {
+                    "id" : "1",
+					"text": "What Benefits you have gained from your teacher (multiple choices)",
+                    "name": "benefits",
+                    "qtype": "checkbox",
+                    "choices": [
+                        { "id" : "1","text": "Enhances our thinking ability", "score": 3 },
+                        { "id" : "2","text": "Increases our interest in the subject", "score": 3 },
+                        { "id" : "3","text": "Gives useful insights as to how the topic we are studying is relevant today", "score": 2 },
+                        { "id" : "4","text": "Helps students identify important questions to pass in university Exam", "score": 2 },
+                        { "id" : "5","text": "Not very helpful. We mostly study on our own", "score": -1 }
+                    ]
+                },
+                {
+                    "id" : "2",
+					"text": "What kind of assignments teacher gave you during this course (multiple choices)",
+                    "name": "assignments",
+                    "qtype": "checkbox",
+                    "choices": [
+                        { "id" : "1","text": "Projects / Activities that enhances practical understanding of the subject", "score": 5 },
+                        { "id" : "2","text": "Several problems to solve (numerical, programs, comprehensions etc.)", "score": 3 },
+                        { "id" : "3","text": "Theoretical questions to answer that are important for exam", "score": 2 },
+                        { "id" : "4","text": "Teacher did not give any assignments to us", "score": -1 }
+                    ]
+                },
+                {
+                    "id" : "3",
+					"text": "What kind of In-Class assessment teacher gave (multiple choices)",
+                    "name": "assessments",
+                    "qtype": "checkbox",
+                    "choices": [
+                        { "id" : "1","text": "class tests with multiple sets of questions", "score": 5 },
+                        { "id" : "2","text": "Asking questions in class", "score": 5 },
+                        { "id" : "3","text": "Teacher did not do any in-class assessment", "score": -1 }
+                    ]
+                },
+                {
+					"id" : "4",
+				  "text": "Teacher helps student in realizing career goals",
+                    "name": "career goal",
+                    "qtype": "radio",
+                    "attempted": false,
+                    "time": [],
+                    "clickcount": [],
+                    "choicetimes":[], 
+                    "choices": [
+                        { "id" : "1","text": "Teacher connects career goals to subject", "score": 10 },
+                        { "id" : "2","text": "Teacher does not help with career goals", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "5",
+					"text": "How do you find teacher's way of teaching",
+                    "name": "Style",
+                    "qtype": "radio",
+                    "attempted": false,
+                    "time": [],
+                    "clickcount": [],
+                    "choicetimes":[], 
+                    "choices": [
+                        { "id" : "1","text": "Makes difficult topics easy to understand", "score": 10 },
+                        { "id" : "2","text": "Good for easy and moderate topics. Confuses us for difficult topics", "score": 7 },
+                        { "id" : "3","text": "Good for easy topics. Confuses us for moderate or difficult topics", "score": 4 },
+                        { "id" : "4","text": "Not good. We only go there for attendance", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "6",
+					"text": "Teacher completes course:",
+                    "name": "completion",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "in time and at a uniform pace", "score": 10 },
+                        { "id" : "2","text": "in time but speeds up at the end", "score": 7 },
+                        { "id" : "3","text": "does not complete and give notes at the end", "score": 4 },
+                        { "id" : "4","text": "does not complete nor give notes", "score": -1 }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "2",
+			"name": "Behaviour",
+            "questions": [
+                {
+                    "id" : "1",
+					"text": "Teacher's respect towards student",
+                    "name": "respect",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Respects individual strengths of each student. Critical comments are also helpful", "score": 10 },
+                        { "id" : "2","text": "Respects all students equally. Does not speak critically even in a good sense", "score": 8 },
+                        { "id" : "3","text": "Respects students fine. Some critical speech make students lose confidence", "score": 6 },
+                        { "id" : "4","text": "Often speaks harshly making students feel very low", "score": 2 }
+                    ]
+                },
+                {
+                    "id" : "2",
+					"text": "How would you rate Teacher's punctuality",
+                    "name": "punctuality",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Always comes on time and encourages students to be punctual", "score": 10 },
+                        { "id" : "2","text": "Always comes to class on time but does not mind if students come late", "score": 7 },
+                        { "id" : "3","text": "Does not always come on time but forces students to come on time", "score": 2 },
+                        { "id" : "4","text": "Neither comes on time not bothers about student's punctuality", "score": -1 }
+                    ]
+                },
+                {
+                    "id" : "3",
+					"text": "How well dressed is your Teacher?",
+                    "name": "dressing",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Always nicely dressed", "score": 10 },
+                        { "id" : "2","text": "Mostly dressed nicely", "score": 8 },
+                        { "id" : "3","text": "Mostly not well dressed", "score": 6 },
+                        { "id" : "4","text": "Never well dressed", "score": 2 }
+                    ]
+                },
+                {
+                    "id" : "4",
+					"text": "How would you rate Teacher's accessibility in person?",
+                    "name": "accessibility",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Friendly and available to answer any doubt outside class", "score": 10 },
+                        { "id" : "2","text": "Available but does not encourage questions beyond university exam", "score": 8 },
+                        { "id" : "3","text": "Does not encourage us to meet outside of class", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "5",
+					"text": "How would you rate Teacher's accessibility online?",
+                    "name": "online presence",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Uses online forums and answers doubts promptly", "score": 10 },
+                        { "id" : "2","text": "Give online access but usually does not respond", "score": 5 },
+                        { "id" : "3","text": "Not available online", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "6",
+					"text": "Teacher acts as a role model",
+                    "name": "role model",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Teacher always inspires us to improve", "score": 10 },
+                        { "id" : "2","text": "Teacher often inspires us to improve", "score": 8 },
+                        { "id" : "3","text": "Teacher sometimes inspires us and also at times discourages", "score": 4 },
+                        { "id" : "4","text": "Teacher make us lose confidence", "score": -5 }
+                    ]
+                }
+            ]
+        },
+        {
+            "id" : "3",
+			"name": "Communication",
+            "questions": [
+                {
+                    "id" : "1",
+					"text": "The primary language of instruction used by teacher is",
+                    "name": "language",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Always speaks in English", "score": 10 },
+                        { "id" : "2","text": "Mostly English with little Telugu", "score": 8 },
+                        { "id" : "3","text": "Mostly Telugu with little English", "score": 3 },
+                        { "id" : "4","text": "Always speaks in Telugu", "score": -5 }
+                    ]
+                },
+                {
+                    "id" : "2",
+					"text": "Teacher encourages and corrects students to speak in English",
+                    "name": "English",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Encourages to speak in English", "score": 10 },
+                        { "id" : "2","text": "Never encourages to speak in English", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "3",
+					"text": "Teacher provides timely and useful feedback",
+                    "name": "Feedback",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Yes. It helps us evaluate our progress", "score": 10 },
+                        { "id" : "2","text": "No. We don't get to know how effectively we are learning", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "4",
+					"text": "How would you rate your Teachers Blackboard work",
+                    "name": "blackboard",
+                    "qtype": "radio",
+                    "choices": [
+                        { "id" : "1","text": "Very neat and clearly understandable", "score": 10 },
+                        { "id" : "2","text": "Ok. We can understand it but wish it can be better", "score": 5 },
+                        { "id" : "3","text": "Ugly. We cant understand much from the board", "score": 0 }
+                    ]
+                },
+                {
+                    "id" : "5",
+					"text": "Please rate your Teacher's discussions in class (multiple choice)",
+                    "name": "discussions",
+                    "qtype": "checkbox",
+                    "choices": [
+                        { "id" : "1","text": "Encourages asking questions in class", "score": 3 },
+                        { "id" : "2","text": "Encourages multiple ways to solve any problem", "score": 2 },
+                        { "id" : "3","text": "Gives positive comments on good performance", "score": 3 },
+                        { "id" : "4","text": "Helps poor performers by counseling", "score": 2 },
+                        { "id" : "5","text": "Mostly teacher speaks and does not encourage discussions", "score": -1 },
+                        { "id" : "6","text": "Criticizes students a lot and uses harsh words", "score": -5 }
+                    ]
+                },
+                {
+                    "id" : "6",
+					"text": "The Teacher uses following teaching aids (multiple choice)",
+                    "name": "Teaching Aids",
+                    "qtype": "checkbox",
+                    "choices": [
+                        { "id" : "1","text": "Blackboard", "score": 2 },
+                        { "id" : "2","text": "Presentations etc. on Projector", "score": 2 },
+                        { "id" : "3","text": "Practical Demonstrations in class", "score": 2 },
+                        { "id" : "4","text": "Online quizzes, notes, videos etc.", "score": 2 },
+                        { "id" : "5","text": "Online discussion forums", "score": 2 }
+                    ]
+                }
+            ]
+        }]
+    }

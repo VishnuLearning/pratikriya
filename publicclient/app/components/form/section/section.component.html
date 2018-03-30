@@ -1,0 +1,6 @@
+<div>
+  <h2>{{section.name}}</h2>
+
+  <app-question *ngFor="let question of section.questions" 
+  [question]="question" [section]="section" [subjects]='subjects'></app-question>
+</div>
