@@ -1,3 +1,21 @@
-<p>
-  form-creator works!
-</p>
+<mat-grid-list cols="3" rowHeight="1:2">
+  <mat-grid-tile>
+<form class="example-form" [formGroup]="form">
+
+  <mat-form-field class="demo-full-width">
+    <input matInput placeholder="Form Name" [matAutocomplete]="auto" formControlName='formname'>
+    <mat-error>please select valid form from list</mat-error>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let f of filteredForms" [value]="f">
+        <span>{{ f.name }}</span> 
+        <span>{{ f.creator }}</span>
+      </mat-option>
+    </mat-autocomplete>
+    <mat-hint>please search your form</mat-hint>
+  </mat-form-field>
+  
+</form>
+
+</mat-grid-tile>
+
+</mat-grid-list>
