@@ -1,0 +1,19 @@
+<!--<mat-radio-group>
+  <mat-radio-button value="var">
+      hello world
+  </mat-radio-button>
+  </mat-radio-group>-->
+<!--<button md-raised-button>foo</button>-->
+<div>
+  <h4>{{question.text}}</h4>
+  <div *ngIf="question.qtype=='text'">
+    
+  </div>
+  <div *ngIf="question.qtype!='text'">
+  </div>
+  <mat-radio-group>
+    <div *ngFor="let choice of question.choices; let i=index">
+      <app-choice [choice]='choice' [question]=question [val]='i'></app-choice>
+    </div>
+</mat-radio-group>
+</div>

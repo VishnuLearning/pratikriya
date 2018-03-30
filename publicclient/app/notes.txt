@@ -1,0 +1,10 @@
+two server calls will be made based on the token
+1st will get the form
+second will get the entitites to be reviewd.
+
+For both requests put statis json files as data source under assets folder
+create two services. One to fetch the form another to feth the entitites.
+create home components thwt will take data from those services and render the form.
+
+You need to create section, question and choice components, they need to be mapped to entities being reviewed.
+

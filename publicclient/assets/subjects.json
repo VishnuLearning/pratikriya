@@ -1,0 +1,4 @@
+[
+    {"name":"Teacher 1", "picurl":"assets/images/person.png", "description":"C Programming", "id":1},
+    {"name":"Teacher 2", "picurl":"assets/images/person.png", "description":"JAVA Programming", "id":2}
+]
