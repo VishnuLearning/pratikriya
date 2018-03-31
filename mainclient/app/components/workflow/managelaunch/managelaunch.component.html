@@ -1,0 +1,34 @@
+<div>
+    <h2 class='mat-display-1 demo-heading tagline center'>
+      <strong class="highlight">LAUNCH</strong> YOUR WORKFLOWS
+    </h2>
+  </div>
+  <div class='container'>
+    <div class="left">
+        <mat-list>
+            <mat-list-item *ngFor='let w of workflows' (click)="show(w)"> 
+              {{w.name}}
+            </mat-list-item>
+           </mat-list>
+    </div>
+    <div class="right">
+      <div *ngIf='stats'>
+          <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title>{{stats.name}}</mat-card-title>
+                <mat-card-subtitle>{{stats.purpose}}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <workflow-stat *ngFor="let stage of stats.stages" [peoplecount]="stage.peoplecount" 
+                              [submissioncount]="stage.submissioncount"
+                               [deadline] = "stage.deadline" [title]="stage.title">              </workflow-stat>
+                {{stats.recipients}} Recipients
+              </mat-card-content>
+              <mat-card-actions>
+                  <button *ngIf="stats.launchdate==''" mat-raised-button disabled>LAUNCH THIS WORKFLOW</button>
+                  You launched it on {{stats.launchdate}}. You can monitor the progress here!
+              </mat-card-actions>
+            </mat-card>
+      </div>
+    </div>
+  </div>

@@ -21,6 +21,7 @@ import { MatchorganizationService } from './services/matchorganization.service';
 import {UserStateService} from './services/user-state.service';
 import { FormlookupService } from './services/formlookup.service';
 import { FormService } from './services/form.service';
+import { WorkflowService } from './services/workflow.service';
 
 //helpers
 import { ErrorInterceptorProvider} from './helpers/error.interceptor';
@@ -53,6 +54,11 @@ import { DesignsectionComponent } from './components/form-creator/form-design/de
 import { SectionComponent } from './components/form-creator/feedback-form/section/section.component';
 import { QuestionComponent } from './components/form-creator/feedback-form/question/question.component';
 import { ChoiceComponent } from './components/form-creator/feedback-form/choice/choice.component';
+import { ManagelaunchComponent } from './components/workflow/managelaunch/managelaunch.component';
+import { ManageexecuteComponent } from './components/workflow/manageexecute/manageexecute.component';
+import { ManagependingComponent } from './components/workflow/managepending/managepending.component';
+import { CreateworkflowComponent } from './components/workflow/createworkflow/createworkflow.component';
+import { StatComponent } from './components/workflow/stat/stat.component';
 
 
 
@@ -83,7 +89,12 @@ import { ChoiceComponent } from './components/form-creator/feedback-form/choice/
     DesignsectionComponent,
     SectionComponent,
     QuestionComponent,
-    ChoiceComponent
+    ChoiceComponent,
+    ManagelaunchComponent,
+    ManageexecuteComponent,
+    ManagependingComponent,
+    CreateworkflowComponent,
+    StatComponent
 
   ],
   entryComponents: [AlertDialog],
@@ -109,7 +120,8 @@ import { ChoiceComponent } from './components/form-creator/feedback-form/choice/
     useClass: ShowOnDirtyErrorStateMatcher},
     UserStateService,
     FormlookupService,
-    FormService
+    FormService,
+    WorkflowService
   ],
   bootstrap: [AppComponent],
   schemas:[

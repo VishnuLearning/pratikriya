@@ -1,0 +1,15 @@
+{
+    "id": "workflow id",
+    "name" : "workflow name",
+    "purpose" : "This workflow is for ...",
+    "stagenumber":2,
+    "launchdate":"21-mar-2018",
+    "stages": [
+        { "title":"Principal"},
+        { "title":"HOD"},
+        { "title":"Class Teacher"},
+        { "title":"Subject Teacher"}
+    ],
+    "stagemessage" : "Please provide emails of class teachers in your department",
+    "deadline":10
+}

@@ -6,13 +6,17 @@
     <app-feedback-form></app-feedback-form>
   </div>
 </div> -->
-<mat-grid-list cols="2" rowHeight="1:1">
-  <mat-grid-tile>
+<!--<mat-grid-list cols="2" rowHeight="1:1">-->
+  <!--<mat-grid-tile id="formselect" style="width:30%;">-->
+    <div id="formcheck">
      <app-form-search (formSelected)='previewForm($event)'> </app-form-search>
-  </mat-grid-tile>
-  <mat-grid-tile style="overflow : scroll;align-items: initial;">
+    </div>
+  <!--</mat-grid-tile>-->
+  <!--<mat-grid-tile id="preview">-->
+    <div id="preview">
     <app-feedback-form  *ngIf="selection" [selectedForm]="selection"></app-feedback-form>
-  </mat-grid-tile>
-</mat-grid-list>
+    </div>
+  <!--</mat-grid-tile>-->
+<!--</mat-grid-list>-->
 <button mat-button routerLink="../newform">Create New</button>
 <button mat-button>Create Workflow</button> 

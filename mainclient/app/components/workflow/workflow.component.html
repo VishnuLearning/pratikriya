@@ -1,3 +1,70 @@
-<p>
-  workflow works!
-</p>
+<main>
+  <div>
+    <h2 class='mat-display-1 demo-heading tagline center'>
+      Your
+      <strong class="highlight">WORKFLOWS</strong>
+    </h2>
+  </div>
+  <mat-grid-list cols="4" rowHeight="350px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card>
+        <mat-card-header>
+          <i class="material-icons large center">note</i>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="body-1 tagline-text center">
+            CREATE new<br>WORKFLOW
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="center">
+          <a class="bottom-margin" mat-raised-button color="primary" routerLink="createworkflow">CREATE</a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card>
+        <mat-card-header>
+          <i class="material-icons large center">launch</i>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="body-1 tagline-text center">
+            MANAGE and<br>LAUNCH Workflows
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="center">
+          <a class="bottom-margin" mat-raised-button color="primary" routerLink="manageworkflows">MANAGE</a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card>
+        <mat-card-header>
+          <i class="material-icons large center">send</i>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="body-1 tagline-text center">
+            EXECUTE Workflows<br>to COLLECT Feedbacks
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="center">
+          <a class="bottom-margin" mat-raised-button color="primary" routerLink="executeworkflows">EXECUTE</a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card>
+        <mat-card-header>
+          <i class="material-icons large center">call_split</i>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="body-1 tagline-text center">
+            Workflows PENDING<br>your Input
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="center">
+          <a class="bottom-margin" mat-raised-button color="primary" routerLink="completeworkflows">COMPLETE</a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</main>

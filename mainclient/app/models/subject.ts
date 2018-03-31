@@ -1,8 +1,7 @@
-export class Stage {
-    title = '';
-    emails: string;
-    message = '';
-    deadline: number=0;
+export class Subject {
+    name = '';
+    picurl = 'assets/filler.png';
+    description = '';
 
     constructor(obj: any) {
         if (obj) {

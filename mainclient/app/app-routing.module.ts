@@ -6,6 +6,10 @@ import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormCreatorComponent } from './components/form-creator/form-creator.component';
+import { ManageexecuteComponent } from './components/workflow/manageexecute/manageexecute.component';
+import { ManagelaunchComponent } from './components/workflow/managelaunch/managelaunch.component';
+import { ManagependingComponent } from './components/workflow/managepending/managepending.component';
+import { CreateworkflowComponent } from './components/workflow/createworkflow/createworkflow.component';
 import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -20,7 +24,10 @@ const routes: Routes = [
   { path: 'set', component: WorkflowComponent, canActivate: [AuthGuard] },
   { path: 'go', component: AnalyticsComponent, canActivate: [AuthGuard] },
   { path: 'newform', component: FormDesignComponent, canActivate: [AuthGuard] },
-
+  { path: 'set/manageworkflows', component: ManagelaunchComponent},
+  { path: 'set/executeworkflows', component: ManageexecuteComponent},
+  { path: 'set/completeworkflows', component: ManagependingComponent},
+  { path: 'set/createworkflow', component: CreateworkflowComponent},
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];

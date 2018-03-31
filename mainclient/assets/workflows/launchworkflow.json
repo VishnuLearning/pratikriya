@@ -1,0 +1,12 @@
+{
+    "id": "1",
+    "name" : "workflow name",
+    "launchdate": "21-mar-2018",
+    "stages": [
+        { "peoplecount":2, "submissioncount":1, "title":"Principal", "deadline":3},
+        { "peoplecount":3, "submissioncount":3, "title":"HOD", "deadline":6},
+        { "peoplecount":6, "submissioncount":1, "title":"Class Teacher", "deadline":10},
+        { "peoplecount":4, "submissioncount":1, "title":"Subject Teacher", "deadline":15}
+    ],
+    "recipients" : 1
+}

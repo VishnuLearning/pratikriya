@@ -1,0 +1,76 @@
+<mat-horizontal-stepper *ngIf='workflow' linear=true #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="workflowDetailsForm">
+    <form [formGroup]="workflowDetailsForm">
+      <ng-template matStepLabel>Workflow Details</ng-template>
+      <mat-form-field>
+        <input placeholder="Name" [(ngModel)]='workflow.name' matInput formControlName="name">
+      </mat-form-field>
+      <div>
+        <button mat-icon-button matStepperNext>
+          <i class="material-icons">chevron_right</i>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step *ngFor="let stageform of stageForms; let i=index" [stepControl]="stageform" [label]="'STAGE'">
+    <form [formGroup]="stageform">
+      <mat-form-field class='demo-full-width'>
+        <input placeholder="Title" [(ngModel)]='workflow.stages[i].title' matInput formControlName="title">
+      </mat-form-field>
+      <mat-form-field *ngIf='i==0' class='demo-full-width'>
+        <input placeholder="Email" [(ngModel)]='workflow.stages[i].emails' matInput formControlName="emails">
+      </mat-form-field>
+      <mat-form-field class='demo-full-width'>
+        <textarea placeholder="Message" [(ngModel)]='workflow.stages[i].message' matInput formControlName="message"></textarea>
+      </mat-form-field>
+      <div>
+        <button mat-icon-button matStepperPrevious>
+          <i class="material-icons">chevron_left</i>
+        </button>
+        <button mat-icon-button matStepperNext>
+          <i class="material-icons">chevron_right</i>
+        </button>
+        <button mat-icon-button type="button" (click)="addStage(i+1)">
+          <i class="material-icons">add_circle</i>
+        </button>
+        <button mat-icon-button type="button" (click)="removeStage(i)">
+          <i class="material-icons">delete</i>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [label]="'Final Step'" [stepControl]="subject">
+    <form [formGroup]="subject">
+      <mat-form-field class='demo-full-width'>
+        <input placeholder="Name" [(ngModel)]='workflow.subject.name'  matInput formControlName='name'>
+      </mat-form-field>
+      <mat-form-field  class='demo-full-width'>
+        <input placeholder="Description" [(ngModel)]='workflow.subject.description'  matInput formControlName='description'>
+      </mat-form-field>
+      <div>
+        <button mat-icon-button matStepperPrevious>
+          <i class="material-icons">chevron_left</i>
+        </button>
+        <button mat-icon-button matStepperNext>
+          <i class="material-icons">chevron_right</i>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-icon-button matStepperPrevious>
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button mat-button (click)="stepper.reset()">
+        <i class="material-icons">replay</i>
+      </button>
+      <button mat-button (click)="submit()">
+        <i class="material-icons">save</i>
+      </button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
