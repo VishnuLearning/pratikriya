@@ -1,27 +1,21 @@
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-      Question1
-  </mat-expansion-panel-header>
-  <mat-form-field class="fullwidth">
-    <input matInput placeholder="Type Question">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-select [(value)]="Selected">
-      <mat-option value="Checkbox">Checkbox
-      </mat-option>
-      <mat-option value="Choicebox">Choicebox
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div>
-    <button mat-button (click)=" choice() ">Add Choice</button>
-  </div>
-  <mat-card>
-    <mat-accordion>
-    <app-designchoice *ngFor="let choice of question.choices">
-
-    </app-designchoice>
-    </mat-accordion>
-  </mat-card>
-
-</mat-expansion-panel>
+<mat-form-field>
+  <input matInput [(ngModel)]='question.name' placeholder="Question Name">
+</mat-form-field>
+<mat-form-field class="fullwidth">
+  <input matInput [(ngModel)]='question.text' placeholder="Question">
+</mat-form-field>
+<mat-form-field>
+  <mat-select placeholder="Select" [(ngModel)]='question.qtype'>
+    <mat-option value="multichoice">Multi Choice
+    </mat-option>
+    <mat-option value="singlechoice">Single Choice
+    </mat-option>
+    <mat-option value="text">Descriptive
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf='question.qtype && question.qtype!="text"'>
+  <h4>Choices</h4>
+  <app-designchoice *ngFor="let choice of question.choices; let i=index" [choice]="choice" [choiceIndex]='i' [question]="question">
+  </app-designchoice>
+</div>

@@ -6,9 +6,25 @@
   .example-container > * {
     width: 100%;
   }
-  .button-color{
-    color:blue;
+  .buttonstyle{
+    font-size:1.5em;
+    text-align:center;
+    margin:30px auto;
+    padding:10px;
   }
   .fullwidth{
-    width:40%;
+    width:30%;
+  }
+
+  .center {
+    text-align:center;
+  }
+
+ 
+  mat-expansion-panel-header {
+    background-color: #673ab7;
+  }
+
+  mat-expansion-panel:nth-child(odd) mat-expansion-panel-header{
+    background-color: #774ac7;
   }

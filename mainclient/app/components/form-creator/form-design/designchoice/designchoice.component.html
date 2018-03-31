@@ -1,9 +1,10 @@
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    choice1
-    </mat-expansion-panel-header>
-  <mat-form-field class="fullwidth">
-    <input matInput placeholder="Type Choice">
+<div style="margin-top:50px">
+  <mat-form-field style="width:400px">
+    <input [(ngModel)]='choice.text' matInput placeholder="Type Choice">
   </mat-form-field>
-
-</mat-expansion-panel>
+  <mat-form-field style="width:100px">
+    <input type="number" matInput [(ngModel)]='choice.score' placeholder="Score">
+  </mat-form-field>
+  <button class='navbtn' mat-mini-fab color='primary' (click)="add()">+</button>
+  <button class='navbtn' mat-mini-fab color='warn' (click)="delete()">x</button>
+</div>

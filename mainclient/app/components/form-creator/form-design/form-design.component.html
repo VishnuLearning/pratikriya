@@ -1,15 +1,34 @@
-<form>
-  <mat-card>
+<div class='center'>
 
-    <mat-form-field class="fullwidth">
-      <input matInput placeholder="Form-Name">
-    </mat-form-field>
-    <div>
-      <button mat-button (click)="section()">Add Section</button>
-    </div>
-    <mat-accordion>
-      <app-designsection *ngFor="let section of form.sections" [section]="section"></app-designsection>
-    </mat-accordion>
-    <button mat-button class="button-color">Submit Form</button>
-  </mat-card>
-</form>
+<div>
+  <mat-form-field style="width:40%; margin-top:30px">
+    <input matInput [(ngModel)]='form.name' placeholder="Form name" required>
+  </mat-form-field>
+</div>
+<div>
+  <mat-form-field style="width:40%">
+    <input matInput [(ngModel)]='form.purpose' placeholder="Purpose of form">
+  </mat-form-field>
+</div>
+<h2>SECTIONS</h2>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let section of form.sections; let i=index" [expanded]='expanded[i]'>
+    <mat-expansion-panel-header style="color:white; margin-bottom:20px;">
+      <mat-panel-title style="color:white">
+        {{section.name}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-designsection [section]="section" [form]="form"></app-designsection>
+    <mat-grid-list [cols]="i>0?2:1" rowHeight='200'>
+      <mat-grid-tile>
+        <button mat-raised-button color='primary' (click)="addSection(i+1)">ADD ANOTHER SECTION</button>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf='i>0'>
+        <button *ngIf='i>0' mat-raised-button color='warn' (click)="deleteSection(i)">DELETE THIS SECTION</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>
+<button mat-raised-button color='primary' class="buttonstyle" (click)="submit()">SAVE THIS FORM</button>
+  
+</div>

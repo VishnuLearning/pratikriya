@@ -1,25 +1,22 @@
-<mat-expansion-panel>
+<mat-form-field>
+  <input [(ngModel)]='section.name' matInput placeholder="Section-Name">
+</mat-form-field>
 
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      {{section.name}}
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-  
-  <mat-form-field>
-    <input matInput placeholder="Section-Name">
-    
-  </mat-form-field>
+<h3>Questions</h3>
 
-  <div>
-    <button mat-button (click)="question()">Add Question</button>
-  </div>
-    
-  <mat-card>
-    <mat-accordion>
-    <app-designquestion *ngFor="let question of section.questions" [question]="question"></app-designquestion>
-    </mat-accordion>
-  </mat-card> 
-
-</mat-expansion-panel>
-
+<mat-horizontal-stepper>
+  <mat-step *ngFor="let question of section.questions; let i=index">
+    <ng-template matStepLabel>{{question.name}}</ng-template>
+    <app-designquestion [section]='section' [question]='question'></app-designquestion>
+    <div style="margin-top:30px">
+      <button class='navbtn' color='primary' mat-mini-fab matStepperPrevious>
+        <i class="material-icons">chevron_left</i>
+      </button>
+      <button mat-raised-button color='primary' (click)="addQuestion(i+1)">Add Another Question</button>
+      <button mat-raised-button color='warn' (click)="deleteQuestion(i)">Delete This Question</button>
+      <button class='navbtn' color='primary' mat-mini-fab matStepperNext>
+        <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
