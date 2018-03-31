@@ -1,0 +1,15 @@
+<form>
+  <mat-card>
+
+    <mat-form-field class="fullwidth">
+      <input matInput placeholder="Form-Name">
+    </mat-form-field>
+    <div>
+      <button mat-button (click)="section()">Add Section</button>
+    </div>
+    <mat-accordion>
+      <app-designsection *ngFor="let section of form.sections" [section]="section"></app-designsection>
+    </mat-accordion>
+    <button mat-button class="button-color">Submit Form</button>
+  </mat-card>
+</form>

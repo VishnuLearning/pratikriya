@@ -1,0 +1,27 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+      Question1
+  </mat-expansion-panel-header>
+  <mat-form-field class="fullwidth">
+    <input matInput placeholder="Type Question">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(value)]="Selected">
+      <mat-option value="Checkbox">Checkbox
+      </mat-option>
+      <mat-option value="Choicebox">Choicebox
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div>
+    <button mat-button (click)=" choice() ">Add Choice</button>
+  </div>
+  <mat-card>
+    <mat-accordion>
+    <app-designchoice *ngFor="let choice of question.choices">
+
+    </app-designchoice>
+    </mat-accordion>
+  </mat-card>
+
+</mat-expansion-panel>

@@ -1,0 +1,11 @@
+<div class="form">
+  <h1>Form Name : {{form.name}}</h1>
+  <h2>Createdby : {{form.createdBy}}</h2>
+  <app-section *ngFor="let section of form.sections" [section]="section">
+  </app-section>
+  <button mat-button>Use</button>
+  <!-- <button mat-button routerLink="../newform">Create New</button> -->
+  <button mat-button (click)=" fun() " routerLink="../newform">Create New</button>
+  <button mat-button>Create Workflow</button>
+</div>
+<div class="clear"></div>

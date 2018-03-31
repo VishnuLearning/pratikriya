@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
 
@@ -20,6 +20,7 @@ import { RolesService } from './services/roles.service';
 import { MatchorganizationService } from './services/matchorganization.service';
 import {UserStateService} from './services/user-state.service';
 import { FormlookupService } from './services/formlookup.service';
+import { FormService } from './services/form.service';
 
 //helpers
 import { ErrorInterceptorProvider} from './helpers/error.interceptor';
@@ -43,6 +44,16 @@ import { FormCreatorComponent } from './components/form-creator/form-creator.com
 import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { StageComponent } from './components/workflow/stage/stage.component';
+import { FormSearchComponent } from './components/form-creator/form-search/form-search.component';
+import { FeedbackFormComponent } from './components/form-creator/feedback-form/feedback-form.component';
+import { FormDesignComponent } from './components/form-creator/form-design/form-design.component';
+import { DesignchoiceComponent } from './components/form-creator/form-design/designchoice/designchoice.component';
+import { DesignquestionComponent } from './components/form-creator/form-design/designquestion/designquestion.component';
+import { DesignsectionComponent } from './components/form-creator/form-design/designsection/designsection.component';
+import { SectionComponent } from './components/form-creator/feedback-form/section/section.component';
+import { QuestionComponent } from './components/form-creator/feedback-form/question/question.component';
+import { ChoiceComponent } from './components/form-creator/feedback-form/choice/choice.component';
+
 
 
 
@@ -63,7 +74,17 @@ import { StageComponent } from './components/workflow/stage/stage.component';
     FormCreatorComponent,
     WorkflowComponent,
     AnalyticsComponent,
-    StageComponent
+    StageComponent,
+    FormSearchComponent,
+    FeedbackFormComponent,
+    FormDesignComponent,
+    DesignchoiceComponent,
+    DesignquestionComponent,
+    DesignsectionComponent,
+    SectionComponent,
+    QuestionComponent,
+    ChoiceComponent
+
   ],
   entryComponents: [AlertDialog],
   imports: [
@@ -87,8 +108,12 @@ import { StageComponent } from './components/workflow/stage/stage.component';
     {provide: ErrorStateMatcher, 
     useClass: ShowOnDirtyErrorStateMatcher},
     UserStateService,
-    FormlookupService
+    FormlookupService,
+    FormService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }

@@ -1,0 +1,25 @@
+<mat-expansion-panel>
+
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{section.name}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  
+  <mat-form-field>
+    <input matInput placeholder="Section-Name">
+    
+  </mat-form-field>
+
+  <div>
+    <button mat-button (click)="question()">Add Question</button>
+  </div>
+    
+  <mat-card>
+    <mat-accordion>
+    <app-designquestion *ngFor="let question of section.questions" [question]="question"></app-designquestion>
+    </mat-accordion>
+  </mat-card> 
+
+</mat-expansion-panel>
+

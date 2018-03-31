@@ -1,8 +1,8 @@
   
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';    
-.mat-card {    
-    text-align: -webkit-center;    
-}    
+// .mat-card {    
+//     text-align: -webkit-center;    
+// }    
     
 .demo-toolbar {    
     display: flex;    
@@ -25,15 +25,15 @@ body {
     font-family: Roboto, sans-serif;    
 }    
     
-mat-card {    
-    max-width: 80%;    
-    margin: 2em auto;    
-    text-align: center;    
-}    
+// mat-card {    
+//     max-width: 80%;    
+//     margin: 2em auto;    
+//     text-align: center;    
+// }    
     
-mat-toolbar-row {    
-    justify-content: space-between;    
-}    
+// mat-toolbar-row {    
+//     justify-content: space-between;    
+// }    
     
 .done {    
     position: fixed;    
