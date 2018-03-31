@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Workflow } from '../../../models/workflow';
 import { Stage } from '../../../models/stage';
 import { WorkflowService } from '../../../services/workflow.service';
-import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-workflow',
   templateUrl: './createworkflow.component.html',
@@ -16,7 +16,7 @@ export class CreateworkflowComponent implements OnInit {
   stages: Stage[] = [];
   workflowDetailsForm: FormGroup;
   subject: FormGroup;
-  constructor(private _workflowService: WorkflowService, private http: HttpClient, private _fb: FormBuilder) {
+  constructor(private _workflowService: WorkflowService, private _fb: FormBuilder) {
   }
 
   ngOnInit() {
@@ -69,6 +69,6 @@ export class CreateworkflowComponent implements OnInit {
 
   submit() {
     console.log(this.workflow);
-    this.http.post('/workflow', this.workflow);
+    this._workflowService.create(this.workflow);
   }
 }

@@ -58,6 +58,7 @@ import { ManagelaunchComponent } from './components/workflow/managelaunch/manage
 import { ManageexecuteComponent } from './components/workflow/manageexecute/manageexecute.component';
 import { ManagependingComponent } from './components/workflow/managepending/managepending.component';
 import { CreateworkflowComponent } from './components/workflow/createworkflow/createworkflow.component';
+import { StatComponent } from './components/workflow/stat/stat.component';
 
 
 
@@ -92,7 +93,8 @@ import { CreateworkflowComponent } from './components/workflow/createworkflow/cr
     ManagelaunchComponent,
     ManageexecuteComponent,
     ManagependingComponent,
-    CreateworkflowComponent
+    CreateworkflowComponent,
+    StatComponent
 
   ],
   entryComponents: [AlertDialog],

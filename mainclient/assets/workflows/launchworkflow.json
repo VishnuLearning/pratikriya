@@ -1,5 +1,5 @@
 {
-    "id": "workflow id",
+    "id": "1",
     "name" : "workflow name",
     "launchdate": "21-mar-2018",
     "stages": [
@@ -8,5 +8,5 @@
         { "peoplecount":6, "submissioncount":1, "title":"Class Teacher", "deadline":10},
         { "peoplecount":4, "submissioncount":1, "title":"Subject Teacher", "deadline":15}
     ],
-    "recipeints" : 1
+    "recipients" : 1
 }
