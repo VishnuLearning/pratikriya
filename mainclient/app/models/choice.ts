@@ -1,5 +1,4 @@
 export class Choice {
-    _id:string;
-    text:string;
-    score:number;
+    text:string='';
+    score:number=0;
 }
