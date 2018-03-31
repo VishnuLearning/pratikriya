@@ -3,7 +3,7 @@ const router = express.Router()
 const formService = require('../services/form.service')
 const FeedbackForm = require('../models/feedbackForm')
 
-router.post('/getForms',getFormById)
+router.post('/getForm',getFormById)
 router.get('/formList', getFormList)
 router.get('/insertForm', insertForm )
 
