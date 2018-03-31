@@ -1,12 +1,7 @@
 <form class="example-form" [formGroup]="form">
 
-<<<<<<< HEAD
-  <mat-form-field class="demo-full-width">
-    <input matInput placeholder="FormName" [matAutocomplete]="auto" formControlName='formname'>
-=======
   <mat-form-field>
     <input matInput placeholder="Form Name" [matAutocomplete]="auto" formControlName='formname'>
->>>>>>> 7116bec2ef8be9183660d5eb22f9a853fcb9e315
     <mat-error>please select valid form from list</mat-error>
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option (click)='makeSelection(f)' *ngFor="let f of filteredForms;" [value]="f">
