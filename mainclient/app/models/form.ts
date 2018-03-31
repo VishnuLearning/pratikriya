@@ -2,7 +2,7 @@ import { Section } from "./section";
 
 export class Form {
     name:string = '';
-    purpose: string = '';
-    createdby:string = '';
+    createdBy:string = '';
+    purpose:string ='';
     sections:Section[] = [];
 }

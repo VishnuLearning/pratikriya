@@ -40,8 +40,11 @@ function saveForm(form){
     Form.save(function(err, form){
         if(err) deferred.reject("their is a error via MONGODB")
         console.log("form saved :)")
-        deferred.resolve(formList)
+        deferred.resolve(form)
     })
     return deferred.promise
 }
+
+
+
 

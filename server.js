@@ -19,6 +19,7 @@ app.use(express.static(__dirname+"/dist"))
 app.get('/get', redirector)
 app.get('/set', redirector)
 app.get('/go', redirector)
+app.get('/newform',redirector)
 
 
 //use JWT auth to secure the api, the token can be passed in the authorization header or querystring

@@ -19,9 +19,14 @@ export class FormService {
   constructor(private http: HttpClient) { }
 
   getForm(id:string) {
-    //this.formUrl = '/get/getForm';
-    console.log("getForm");
-    return this.http.get<Form>(this.formUrl, httpOptions);
+    this.formUrl = '/get/getForm';
+    console.log(id);
+    return this.http.post<any>(this.formUrl,{id:id}, httpOptions);
+  }
+
+  submitForm(form){
+    return this.http.post<any>('/get/insertForm', form, httpOptions);
+
   }
   
 }

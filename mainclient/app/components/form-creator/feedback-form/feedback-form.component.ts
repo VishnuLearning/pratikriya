@@ -16,14 +16,15 @@ export class FeedbackFormComponent implements OnInit {
     this.form = new Form();
   }
   ngOnInit() {
-    this._form.getForm(this.selectedForm.id).subscribe(res => {
-      console.log(res);
-      this.form = Object.assign(this.form, res);
+    console.log(this.selectedForm)
+    this._form.getForm(this.selectedForm._id).subscribe(res => {
+      this.form =  Object.assign(this.form, res[0]);
+      console.log(this.form);
     }
     );
   }
   fun(){
-    console.log("helloowr old");
+    console.log("helloowrold");
   }
 }
 

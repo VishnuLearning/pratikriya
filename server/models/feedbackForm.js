@@ -5,8 +5,9 @@ const feedbackForm = {
     //define schema
     name : String,
     createdBy: String,
+    purpose: String,
     sections:[
-      {
+      { 
          name:String,
          questions:[
              {

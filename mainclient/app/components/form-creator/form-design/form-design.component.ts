@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Section } from '../../../models/section';
 import { Form } from '../../../models/form';
+import { FormService } from '../../../services/form.service';
 
 @Component({
   selector: 'app-form-design',
@@ -10,7 +11,8 @@ import { Form } from '../../../models/form';
 export class FormDesignComponent implements OnInit {
   form: Form;
   expanded:boolean[]=[true];
-  constructor() {
+  saved: any = null;
+  constructor(private _formService:FormService) {
     this.form = new Form();
   }
   ngOnInit() {
@@ -33,6 +35,10 @@ export class FormDesignComponent implements OnInit {
   //   for(let i=0;i<this.form.sections.length;i++){
   //     newform.sections[i].name=this.form.sections[i].name;
   //   }
-    console.log(this.form);
+    this._formService.submitForm(this.form).
+    subscribe(res=>{
+      console.log(res);
+      this.saved = res
+    });
    }
 }
