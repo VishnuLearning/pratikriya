@@ -7,7 +7,7 @@ const httpOptions = {
 };
 
 export class FormSearchResult {
-  constructor(public id: string, public name: string ) { }
+  constructor(public _id: string, public name: string ) { }
 }
 /*
 export function ValidateOrg(control: AbstractControl) {
@@ -33,7 +33,7 @@ export class FormlookupService {
   getAllForms() {
     //update url with searchtext param and filet in node or database
     //can implement local storage in the service later as well
-    //this.formSearchUrl ='/get/formList';
+    this.formSearchUrl ='/get/formList';
     return this.http.get<FormSearchResult[]>(this.formSearchUrl, httpOptions);
 
   }

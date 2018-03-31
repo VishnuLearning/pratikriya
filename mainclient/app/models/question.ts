@@ -3,6 +3,6 @@ import { Choice } from "./choice";
 export class Question {
     text:string='';
     name:string='';
-    qtype:string='text';
+    qType:string='text';
     choices:Choice[]=[];
 }
