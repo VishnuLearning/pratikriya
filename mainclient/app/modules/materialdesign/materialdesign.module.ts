@@ -20,7 +20,8 @@ import {
       MatAutocompleteModule,
       MatProgressSpinnerModule,
       MatSnackBarModule,
-      MatDialogModule
+      MatDialogModule,
+      MatStepperModule
 } from '@angular/material'; 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -42,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
             MatCheckboxModule, MatGridListModule,
             MatSliderModule, MatProgressSpinnerModule,
             MatSnackBarModule, MatDialogModule,
-            ReactiveFormsModule
+            ReactiveFormsModule,
+            MatStepperModule
       
       ],
       exports: [MatButtonModule,
@@ -62,7 +64,8 @@ import { ReactiveFormsModule } from '@angular/forms';
             MatCheckboxModule, MatGridListModule,
             MatSliderModule, MatProgressSpinnerModule,
             MatSnackBarModule, MatDialogModule,
-            ReactiveFormsModule
+            ReactiveFormsModule,
+            MatStepperModule
       
       ],
       declarations: []

@@ -9,6 +9,7 @@ import { FormCreatorComponent } from './components/form-creator/form-creator.com
 import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { AuthGuard } from './guards/auth.guard';
+import { FormDesignComponent } from './components/form-creator/form-design/form-design.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'get', component: FormCreatorComponent},// canActivate: [AuthGuard] },
   { path: 'set', component: WorkflowComponent, canActivate: [AuthGuard] },
   { path: 'go', component: AnalyticsComponent, canActivate: [AuthGuard] },
+  { path: 'newform', component: FormDesignComponent},// canActivate: [AuthGuard] },
 
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
