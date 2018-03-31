@@ -1,0 +1,13 @@
+{
+    "_id": "2",
+    "name" : "workflow name",
+    "purpose" :"This workflow is for ...",
+    "stages": [
+        { "peoplecount":2, "submissioncount":2, "title":"Principal", "deadline":3},
+        { "peoplecount":8, "submissioncount":8, "title":"HOD", "deadline":6},
+        { "peoplecount":26, "submissioncount":26, "title":"Class Teacher", "deadline":10},
+        { "peoplecount":90, "submissioncount":90, "title":"Subject Teacher", "deadline":15}
+    ],
+    "recipients" : 759,
+    "executiondate":"mar 30, 2018"
+}
