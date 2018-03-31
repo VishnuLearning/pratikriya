@@ -2,9 +2,10 @@
   <mat-step [stepControl]="workflowDetailsForm">
     <form [formGroup]="workflowDetailsForm">
       <ng-template matStepLabel>Workflow Details</ng-template>
-      <mat-form-field>
+      <mat-form-field class="demo-full-width">
         <input placeholder="Name" [(ngModel)]='workflow.name' matInput formControlName="name">
       </mat-form-field>
+      <!-- <app-form-search></app-form-search> -->
       <div>
         <button mat-icon-button matStepperNext>
           <i class="material-icons">chevron_right</i>

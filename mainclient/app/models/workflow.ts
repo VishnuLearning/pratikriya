@@ -3,7 +3,7 @@ import {Subject} from './subject';
 
 export class Workflow {
     name = '';
-    id = 0;
+    formId = '';
     stages: Stage[] = [];
     subject: Subject = new Subject(null);
     constructor(obj: any) {

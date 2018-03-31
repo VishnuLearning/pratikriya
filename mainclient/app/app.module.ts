@@ -59,6 +59,7 @@ import { ManageexecuteComponent } from './components/workflow/manageexecute/mana
 import { ManagependingComponent } from './components/workflow/managepending/managepending.component';
 import { CreateworkflowComponent } from './components/workflow/createworkflow/createworkflow.component';
 import { StatComponent } from './components/workflow/stat/stat.component';
+import { NotifierComponent } from './components/notifier/notifier.component';
 
 
 
@@ -94,7 +95,8 @@ import { StatComponent } from './components/workflow/stat/stat.component';
     ManageexecuteComponent,
     ManagependingComponent,
     CreateworkflowComponent,
-    StatComponent
+    StatComponent,
+    NotifierComponent
 
   ],
   entryComponents: [AlertDialog],

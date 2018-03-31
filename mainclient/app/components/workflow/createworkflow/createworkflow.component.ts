@@ -23,7 +23,7 @@ export class CreateworkflowComponent implements OnInit {
 
     this.workflow = new Workflow(null);
     this.workflowDetailsForm = this._fb.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required]
     });
     this.subject = this._fb.group({
       name: ['', Validators.required],
