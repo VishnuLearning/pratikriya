@@ -8,9 +8,9 @@
 </div> -->
 <mat-grid-list cols="2" rowHeight="1:1">
   <mat-grid-tile>
-     <app-form-search> </app-form-search>
+     <app-form-search (formSelected)='previewForm($event)'> </app-form-search>
   </mat-grid-tile>
   <mat-grid-tile style="overflow : scroll;align-items: initial;">
-    <app-feedback-form></app-feedback-form>
+    <app-feedback-form  *ngIf="selection" [selectedForm]="selection"></app-feedback-form>
   </mat-grid-tile>
 </mat-grid-list>

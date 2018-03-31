@@ -18,7 +18,7 @@ export class FormService {
 
   constructor(private http: HttpClient) { }
 
-  getForm() {
+  getForm(id:string) {
     //this.formUrl = '/get/getForm';
     console.log("getForm");
     return this.http.get<Form>(this.formUrl, httpOptions);
