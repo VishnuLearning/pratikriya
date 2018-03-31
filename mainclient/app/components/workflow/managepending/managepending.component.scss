@@ -1,0 +1,72 @@
+.tagline {
+    background-color:#673ab7;
+    line-height: 150px;
+    color:white;
+}
+
+.highlight {
+    color: #ffc107;
+}
+
+i{
+	margin:0,auto;
+	margin-bottom:20px;
+	font-size:2.8em;
+}
+p{
+	font-size:1.5em;
+}
+
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.container {
+    margin-top:50px;
+    width:100%;
+    position:relative;
+    height:400px;
+}
+
+.left {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:30%;
+}
+.right {
+    position:absolute;
+    left:30%;
+    top:0px;
+    width:70%;
+}
+
+mat-list-item:hover {
+    cursor:pointer;
+}
+
+.example-card {
+    width:100%;
+  }
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .bold {
+      font-weight: bold;
+      font-size: 1.2em;
+  }
+  

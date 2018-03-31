@@ -11,5 +11,6 @@
         { "title":"Subject Teacher"}
     ],
     "stagemessage" : "Please provide emails of class teachers in your department",
-    "deadline":10
+    "deadline":10,
+    "final": true
 }

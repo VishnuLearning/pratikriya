@@ -1,3 +1,39 @@
-<p>
-  managepending works!
-</p>
+<div>
+  <h2 class='mat-display-1 demo-heading tagline center'>
+    <strong class="highlight">EXECUTE</strong> YOUR WORKFLOWS
+  </h2>
+</div>
+<div class='container'>
+  <div class="left">
+    <mat-list>
+      <mat-list-item *ngFor='let w of workflows' (click)="show(w)">
+        {{w.name}}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="right">
+    <div *ngIf='stats'>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{stats.name}}</mat-card-title>
+          <mat-card-subtitle>{{stats.purpose}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{stats.message}}</p>
+          <div>
+            <span *ngFor='let stage of stats.stages; let i=index' [ngClass]="{bold:i==stats.stagenumber}">
+              {{stage.title}} ---->  </span>
+          </div>
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Please enter comma separated emails" name="emails" [(ngModel)]='emails'></textarea>
+            </mat-form-field>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button (click)="save()">SAVE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

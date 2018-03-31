@@ -18,7 +18,7 @@ export class WorkflowService {
   
   getPendingWorkflows() {
     // TODO: user email must be used to connect with backend
-    return this.http.get('assets/workflows/pending.json');
+    return this.http.get('assets/workflows/tocomplete.json');
   }
 
   getToLaunchWorkflows() {
@@ -30,7 +30,13 @@ export class WorkflowService {
     // TODO: user email must be used to connect with backend
     return this.http.get('assets/workflows/toexecute.json');
   }
+
+  getPendingWorkflowStatus(id:string, stage:number) {
+    return this.http.get('assets/workflows/pendingworkflow.json');
+  }
+
   apiurl = 'assets/workflows/workflow.json';
+
 
   getWorkflowStatus(id:string) {
     console.log(id);
