@@ -57,6 +57,7 @@ import { ChoiceComponent } from './components/form-creator/feedback-form/choice/
 import { ManagelaunchComponent } from './components/workflow/managelaunch/managelaunch.component';
 import { ManageexecuteComponent } from './components/workflow/manageexecute/manageexecute.component';
 import { ManagependingComponent } from './components/workflow/managepending/managepending.component';
+import { CreateworkflowComponent } from './components/workflow/createworkflow/createworkflow.component';
 
 
 
@@ -90,7 +91,8 @@ import { ManagependingComponent } from './components/workflow/managepending/mana
     ChoiceComponent,
     ManagelaunchComponent,
     ManageexecuteComponent,
-    ManagependingComponent
+    ManagependingComponent,
+    CreateworkflowComponent
 
   ],
   entryComponents: [AlertDialog],

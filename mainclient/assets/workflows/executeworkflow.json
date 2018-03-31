@@ -1,0 +1,11 @@
+{
+    "id": "workflow id",
+    "name" : "workflow name",
+    "stages": [
+        { "peoplecount":2, "submissioncount":2, "title":"Principal"},
+        { "peoplecount":8, "submissioncount":8, "title":"HOD"},
+        { "peoplecount":26, "submissioncount":26, "title":"Class Teacher"},
+        { "peoplecount":90, "submissioncount":90, "title":"Subject Teacher"}
+    ],
+    "recipeints" : 759
+}
