@@ -14,20 +14,22 @@ import { WorkflowComponent } from './components/workflow/workflow.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { AuthGuard } from './guards/auth.guard';
 import { FormDesignComponent } from './components/form-creator/form-design/form-design.component';
+import {FormlistComponent} from './components/form-creator/formlist/formlist.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'get', component: FormCreatorComponent, canActivate: [AuthGuard] },
+  { path: 'get', component: FormCreatorComponent},// canActivate: [AuthGuard] },
   { path: 'set', component: WorkflowComponent, canActivate: [AuthGuard] },
   { path: 'go', component: AnalyticsComponent, canActivate: [AuthGuard] },
   { path: 'newform', component: FormDesignComponent, canActivate: [AuthGuard] },
-  { path: 'set/manageworkflows', component: ManagelaunchComponent},
-  { path: 'set/executeworkflows', component: ManageexecuteComponent},
-  { path: 'set/completeworkflows', component: ManagependingComponent},
-  { path: 'set/createworkflow', component: CreateworkflowComponent},
+  { path: 'formList', component: FormlistComponent},// canActivate: [AuthGuard] },
+  { path: 'set/manageworkflows', component: ManagelaunchComponent, canActivate: [AuthGuard] },
+  { path: 'set/executeworkflows', component: ManageexecuteComponent, canActivate: [AuthGuard] },
+  { path: 'set/completeworkflows', component: ManagependingComponent, canActivate: [AuthGuard] },
+  { path: 'set/createworkflow', component: CreateworkflowComponent, canActivate: [AuthGuard] },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];
