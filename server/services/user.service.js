@@ -93,6 +93,34 @@ function create(userParam) {
     }
   })
 
+/*
+mySqlDb.query('select email from users where email = ?', [email], (err, rows) =>{
+if(err){
+  console.log(err)
+  res.status(401).send("registration failed")
+}else{
+  if(rows.length === 0){
+
+  }else{
+    console.log(err)
+    res.status(401).send("user already exist")
+  }
+}
+})
+
+*/  
+
+/*register a user  
+mySqlDb.query('insert into users (email, password) values(?, ?)' [email, password], (err, rows) =>{
+  if(err){
+    console.log(err)
+    res.status(401).send("registration failed")
+  }else{
+    res.status(200).send("registerd successfully")
+  }
+})
+*/
+
   function createAdminUser() {
     //console.log(userParam.org.contactphone)
     if (userParam.role == 1) {
