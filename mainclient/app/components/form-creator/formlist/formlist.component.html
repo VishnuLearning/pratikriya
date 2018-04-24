@@ -1,0 +1,17 @@
+<mat-grid-list cols="3" rowHeight="200px" >
+  <mat-grid-tile [colspan]="1" [rowspan]="1" *ngFor="let form of forms">
+      <mat-card >
+          <mat-card-header>
+              <h2>{{form.title}}</h2>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="body-1 tagline-text center">
+              Design forms using pre-built templates
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="center">
+            <a class="bottom-margin" mat-raised-button color="primary" routerLink="get">VIEW</a>
+          </mat-card-actions>
+        </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
